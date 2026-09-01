@@ -40,6 +40,18 @@ dsh plugin --profile web add dsh-context@latest
 
 The plugin reads the session and token-meter projections; it does not replace the session log or compaction provider. Verify its package version against the running Harness release before enabling it in a long-lived profile.
 
+## Vision routing
+
+[ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router) (1,031 stars at review time) publishes `dsh-vision-router` (`2.0.1`, MIT). It adds on-demand visual tools such as grounding, crops, pixel diffs, OCR, SVG tracing, and screenshots, while leaving text turns on the configured reasoning model.
+
+Install it only in a profile that already has the attachment and image-capable LLM services:
+
+```sh
+dsh plugin --profile web add dsh-vision-router@latest
+```
+
+The plugin uses native dependencies such as `puppeteer-core` and `potrace`, and may call external vision routes. Review its network and image-retention settings before enabling it; confirm that every image result remains within the Harness attachment and session policies.
+
 ## Further evaluation
 
 The next entries cover context analysis, vision routing, the sidebar workbench, and model-routing presets. They remain separate because each has different dependencies and profile effects.

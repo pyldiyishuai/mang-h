@@ -40,6 +40,18 @@ dsh plugin --profile web add dsh-context@latest
 
 该插件读取 session 和 token-meter projection，不会替换 session log 或 compaction provider。在长期 profile 中启用前，请将包版本与运行中的 Harness 版本核对。
 
+## 视觉路由
+
+[ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router)（审查时 1,031 stars）发布 `dsh-vision-router`（`2.0.1`，MIT）。它增加按需视觉工具，例如定位、裁剪、像素差异、OCR、SVG 描摹和截图，同时让文本轮次继续使用配置的推理模型。
+
+仅在已经包含 attachment 和支持图片的 LLM service 的 profile 中安装：
+
+```sh
+dsh plugin --profile web add dsh-vision-router@latest
+```
+
+该插件使用 `puppeteer-core`、`potrace` 等原生依赖，并可能调用外部视觉路由。启用前请审查网络和图片保留设置，并确认每个图片结果都遵守 Harness 的 attachment 与 session 策略。
+
 ## 后续评估
 
 后续条目将覆盖上下文分析、视觉路由、侧边栏工作台和模型路由 preset。它们的依赖和 profile 影响不同，因此保持独立评估。
