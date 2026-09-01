@@ -28,6 +28,18 @@ dsh plugin --profile web add @nanmicoder/dsh-agent-teams@latest
 
 该插件拥有自己的任务和成员模型。在完成工具名称和持久化交互测试前，不要与 `@deepseek-ai/dsh-experimental-agent-team-profile` 同时启用。
 
+## 上下文分析
+
+[bowenliang123/dsh-context](https://github.com/bowenliang123/dsh-context)（审查时 1,178 stars）发布 `dsh-context`（`0.38.3`，Apache-2.0）。它的 Web 仪表板展示提示词组成、token 和耗时、上下文趋势、文件活动以及实时 Agent 网络。
+
+将它作为可选 Web bundle 安装：
+
+```sh
+dsh plugin --profile web add dsh-context@latest
+```
+
+该插件读取 session 和 token-meter projection，不会替换 session log 或 compaction provider。在长期 profile 中启用前，请将包版本与运行中的 Harness 版本核对。
+
 ## 后续评估
 
 后续条目将覆盖上下文分析、视觉路由、侧边栏工作台和模型路由 preset。它们的依赖和 profile 影响不同，因此保持独立评估。

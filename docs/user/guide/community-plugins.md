@@ -28,6 +28,18 @@ dsh plugin --profile web add @nanmicoder/dsh-agent-teams@latest
 
 The plugin owns its own task and roster model. Do not enable it together with `@deepseek-ai/dsh-experimental-agent-team-profile` until tool-name and persistence interactions have been tested.
 
+## Context analysis
+
+[bowenliang123/dsh-context](https://github.com/bowenliang123/dsh-context) (1,178 stars at review time) publishes `dsh-context` (`0.38.3`, Apache-2.0). Its Web dashboard explains prompt composition, token and timing usage, context trends, file activity, and the live agent network.
+
+Install it as an optional Web bundle:
+
+```sh
+dsh plugin --profile web add dsh-context@latest
+```
+
+The plugin reads the session and token-meter projections; it does not replace the session log or compaction provider. Verify its package version against the running Harness release before enabling it in a long-lived profile.
+
 ## Further evaluation
 
 The next entries cover context analysis, vision routing, the sidebar workbench, and model-routing presets. They remain separate because each has different dependencies and profile effects.
