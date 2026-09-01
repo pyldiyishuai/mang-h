@@ -16,6 +16,18 @@ dsh plugin --profile web add dshmarket
 
 The market installs third-party code with the permissions of the Harness process. Review each plugin before installing it, and do not enable automatic restart or installation in a profile that holds production credentials.
 
+## Agent Teams
+
+[NanmiCoder/dsh-agent-teams](https://github.com/NanmiCoder/dsh-agent-teams) (1,198 stars at review time) publishes `@nanmicoder/dsh-agent-teams` (`0.1.14`). It adds durable teammates, dependency-aware tasks, direct messages, quality gates, and a Web activity panel.
+
+Install it in a disposable Web profile for comparison with the repository's experimental Agent Teams packages:
+
+```sh
+dsh plugin --profile web add @nanmicoder/dsh-agent-teams@latest
+```
+
+The plugin owns its own task and roster model. Do not enable it together with `@deepseek-ai/dsh-experimental-agent-team-profile` until tool-name and persistence interactions have been tested.
+
 ## Further evaluation
 
-The next entries will cover Agent Teams, context analysis, vision routing, the sidebar workbench, and model-routing presets. They remain separate because each has different dependencies and profile effects.
+The next entries cover context analysis, vision routing, the sidebar workbench, and model-routing presets. They remain separate because each has different dependencies and profile effects.
