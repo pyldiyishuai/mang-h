@@ -64,6 +64,18 @@ dsh plugin --profile web add dsh-better-sidebar@latest
 
 该 bundle 包含较大的浏览器依赖和原生 `node-pty` 包。在目标平台上请留意构建脚本授权提示，并在确认兼容性前，让它的侧边栏注册与内置 conversation slot 保持隔离。
 
-## 后续评估
+## 模型路由 preset
 
-后续条目将覆盖上下文分析、视觉路由、侧边栏工作台和模型路由 preset。它们的依赖和 profile 影响不同，因此保持独立评估。
+[yjh051108/dsh-routing-suite](https://github.com/yjh051108/dsh-routing-suite)（审查时 6,967 stars）将 `dsh-super-injector`（`0.3.3`，BSD-3-Clause）与 `dsh-router-standard` preset（`0.3.0`，MIT）组合在一起。该 preset 按任务将请求路由到不同 persona，支持分阶段工具披露，并提供路由状态工具。
+
+请把它当作实验性 profile overlay，而不是核心依赖。先安装 injector，再按照上游项目说明复制一个 preset 目录：
+
+```sh
+dsh plugin --profile web add github:yjh051108/dsh-routing-suite
+```
+
+injector 会改变运行时组合，preset 会增加 prompt section。请在一次性 profile 中测试，检查 `dsh --profile web --dump-config` 的结果，并在测量路由决策和 prompt token 成本前，不要在无人值守的生产会话中启用。
+
+## 集成规则
+
+这些项目都是可选的第三方层，不属于默认 bundle。它们的许可证、依赖范围、网络调用、原生构建步骤和持久化格式仍由上游仓库负责。通用 MCP server 使用现有 MCP client；评估插件时优先使用 profile patch，不要修改包源码。
