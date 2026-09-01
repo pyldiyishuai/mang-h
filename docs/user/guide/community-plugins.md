@@ -52,6 +52,18 @@ dsh plugin --profile web add dsh-vision-router@latest
 
 The plugin uses native dependencies such as `puppeteer-core` and `potrace`, and may call external vision routes. Review its network and image-retention settings before enabling it; confirm that every image result remains within the Harness attachment and session policies.
 
+## Sidebar workbench
+
+[omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar) (3,120 stars at review time) publishes `dsh-better-sidebar` (`0.17.1`, MIT). It adds an extensible Web sidebar with file viewers, an editor, terminal, Git tools, browser tabs, and registration APIs for other plugins.
+
+Install it in a Web profile when those panels are needed:
+
+```sh
+dsh plugin --profile web add dsh-better-sidebar@latest
+```
+
+The bundle includes large browser dependencies and the native `node-pty` package. Check the package's build-script approval prompt on the target platform, and keep its sidebar registration separate from the built-in conversation slots until compatibility is verified.
+
 ## Further evaluation
 
 The next entries cover context analysis, vision routing, the sidebar workbench, and model-routing presets. They remain separate because each has different dependencies and profile effects.

@@ -52,6 +52,18 @@ dsh plugin --profile web add dsh-vision-router@latest
 
 该插件使用 `puppeteer-core`、`potrace` 等原生依赖，并可能调用外部视觉路由。启用前请审查网络和图片保留设置，并确认每个图片结果都遵守 Harness 的 attachment 与 session 策略。
 
+## 侧边栏工作台
+
+[omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)（审查时 3,120 stars）发布 `dsh-better-sidebar`（`0.17.1`，MIT）。它增加可扩展 Web 侧边栏，包含文件查看器、编辑器、终端、Git 工具、浏览器标签，以及供其他插件注册的 API。
+
+需要这些面板时，在 Web profile 中安装：
+
+```sh
+dsh plugin --profile web add dsh-better-sidebar@latest
+```
+
+该 bundle 包含较大的浏览器依赖和原生 `node-pty` 包。在目标平台上请留意构建脚本授权提示，并在确认兼容性前，让它的侧边栏注册与内置 conversation slot 保持隔离。
+
 ## 后续评估
 
 后续条目将覆盖上下文分析、视觉路由、侧边栏工作台和模型路由 preset。它们的依赖和 profile 影响不同，因此保持独立评估。
